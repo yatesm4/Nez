@@ -14,7 +14,7 @@ namespace Nez.UI
 		public TextButton(string text, TextButtonStyle style) : base(style)
 		{
 			SetStyle(style);
-			label = new Label(text, style.Font, style.FontColor, style.FontScaleX, style.FontScaleY);
+			label = new Label(text, style.Font, style.FontColor);
 			label.SetAlignment(UI.Align.Center);
 
 			Add(label).Expand().Fill();
@@ -41,8 +41,6 @@ namespace Nez.UI
 				var labelStyle = label.GetStyle();
 				labelStyle.Font = textButtonStyle.Font;
 				labelStyle.FontColor = textButtonStyle.FontColor;
-				labelStyle.FontScaleX = textButtonStyle.FontScaleX;
-				labelStyle.FontScaleY = textButtonStyle.FontScaleY;
 				label.SetStyle(labelStyle);
 			}
 		}
@@ -121,8 +119,6 @@ namespace Nez.UI
 		/** Optional. */
 		public Color FontColor = Color.White;
 		public Color? DownFontColor, OverFontColor, CheckedFontColor, CheckedOverFontColor, DisabledFontColor;
-		public float FontScaleX, FontScaleY = 1;
-		public float FontScale { set { FontScaleX = value; FontScaleY = value; } }
 
 
 		public TextButtonStyle()
@@ -171,9 +167,7 @@ namespace Nez.UI
 				OverFontColor = OverFontColor,
 				CheckedFontColor = CheckedFontColor,
 				CheckedOverFontColor = CheckedOverFontColor,
-				DisabledFontColor = DisabledFontColor,
-				FontScaleX = FontScaleX,
-				FontScaleY = FontScaleY,
+				DisabledFontColor = DisabledFontColor
 			};
 		}
 	}

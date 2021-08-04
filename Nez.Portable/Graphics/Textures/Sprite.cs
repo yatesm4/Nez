@@ -160,6 +160,41 @@ namespace Nez.Textures
 			return sprites;
 		}
 
+		public static List<Sprite> SpritesFromAtlas(Texture2D texture, int cellWidth, int cellHeight,
+															Rectangle sourceRect, int cellOffset = 0,
+															int maxCellsToInclude = int.MaxValue)
+		{
+			if (sourceRect.Width > texture.Width)
+				sourceRect.Width = texture.Width;
+			if (sourceRect.Height > texture.Height)
+				sourceRect.Height = texture.Height;
+
+			var sprites = new List<Sprite>();
+
+			var cols = sourceRect.Width / cellWidth;
+			var rows = sourceRect.Height / cellHeight;
+			var i = 0;
+
+			for (var y = 0; y < rows; y++)
+			{
+				for (var x = 0; x < cols; x++)
+				{
+					// skip everything before the first cellOffset
+					if (i++ < cellOffset)
+						continue;
+
+					sprites.Add(new Sprite(texture,
+						new Rectangle(sourceRect.X + (x * cellWidth), sourceRect.Y + (y * cellHeight), cellWidth, cellHeight)));
+
+					// once we hit the max number of cells to include bail out. were done.
+					if (sprites.Count == maxCellsToInclude)
+						return sprites;
+				}
+			}
+
+			return sprites;
+		}
+
 		public static implicit operator Texture2D(Sprite tex) => tex.Texture2D;
 
 		public override string ToString() => string.Format("{0}", SourceRect);

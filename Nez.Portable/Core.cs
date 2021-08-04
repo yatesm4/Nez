@@ -8,6 +8,7 @@ using Nez.Console;
 using Nez.Tweens;
 using Nez.Timers;
 using Nez.BitmapFonts;
+using Nez.Analysis;
 using Nez.Textures;
 using System.Diagnostics;
 
@@ -145,10 +146,7 @@ namespace Nez
 				PreferredBackBufferWidth = width,
 				PreferredBackBufferHeight = height,
 				IsFullScreen = isFullScreen,
-				SynchronizeWithVerticalRetrace = true,
-#if MONOGAME_38
-				PreferHalfPixelOffset = true
-#endif
+				SynchronizeWithVerticalRetrace = true
 			};
 			graphicsManager.DeviceReset += OnGraphicsDeviceReset;
 			graphicsManager.PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8;

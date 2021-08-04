@@ -20,7 +20,7 @@ namespace Nez.UI
 			image = new Image();
 			image.SetScaling(Scaling.Fit);
 
-			label = new Label(text, style.Font, style.FontColor, style.FontScaleX, style.FontScaleY);
+			label = new Label(text, style.Font, style.FontColor);
 			label.SetAlignment(UI.Align.Center);
 
 			Add(image);
@@ -52,8 +52,6 @@ namespace Nez.UI
 				var labelStyle = label.GetStyle();
 				labelStyle.Font = style.Font;
 				labelStyle.FontColor = style.FontColor;
-				labelStyle.FontScaleX = style.FontScaleX;
-				labelStyle.FontScaleY = style.FontScaleY;
 				label.SetStyle(labelStyle);
 			}
 		}
@@ -180,8 +178,6 @@ namespace Nez.UI
 				CheckedFontColor = CheckedFontColor,
 				CheckedOverFontColor = CheckedOverFontColor,
 				DisabledFontColor = DisabledFontColor,
-				FontScaleX = FontScaleX,
-				FontScaleY = FontScaleY,
 
 				ImageUp = ImageUp,
 				ImageDown = ImageDown,

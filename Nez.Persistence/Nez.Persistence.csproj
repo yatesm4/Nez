@@ -1,6 +1,6 @@
 <Project ToolsVersion="15.0">
     <PropertyGroup>
-        <BaseIntermediateOutputPath>obj\Nez.Persistence</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     </PropertyGroup>
     <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
@@ -14,7 +14,6 @@
         <AssemblyName>Nez.Persistence</AssemblyName>
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     </PropertyGroup>
 
     <PropertyGroup>

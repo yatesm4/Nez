@@ -1,6 +1,6 @@
 <Project ToolsVersion="15.0">
     <PropertyGroup>
-        <BaseIntermediateOutputPath>obj\Nez.ImGui</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     </PropertyGroup>
     <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
@@ -14,7 +14,6 @@
         <AssemblyName>Nez.ImGui</AssemblyName>
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
         <IntermediateOutputPath>obj\Nez.ImGui\$(Configuration)</IntermediateOutputPath>
-		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     </PropertyGroup>
 
     <ItemGroup>
